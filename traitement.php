@@ -1,21 +1,50 @@
 <?php
+require_once "questions.php";
+$questions = getQuestions();
 
-    $retour = mail('contact@marionhouze.com', 'Test envoie qcm', $_POST['nom']);
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+//die;
+
+$nom = htmlentities($_POST['nom']); // required
+$prenom = htmlentities($_POST['prenom']); // required
+$email = htmlentities($_POST['society']); // required
+$telephone = htmlentities($_POST['mail']); // not required
+$commentaire = htmlentities($_POST['phone']); // required
+
+$message = "
+  Nom: $nom,<br>
+  Prénom: $prenom,<br>
+";
+
+$numQuestion = 1;
+$note = 0;
+while (isset($_POST["reponses-$numQuestion"])) {
+  $reponses = $_POST["reponses-$numQuestion"];
+  $question = $questions[$numQuestion - 1];
+
+  if ($reponses == $question["correctes"]) {
+    $note++;
+  }
+
+  // Ajouter dans la variable message ($message .= "en plus";)
+
+  $numQuestion++;
+}
+echo $note;
 
 
-    $nom = $_POST['nom']; // required
-    $prenom = $_POST['prenom']; // required
-    $email = $_POST['society']; // required
-    $telephone = $_POST['mail']; // not required
-    $commentaire = $_POST['phone']; // required
 
-            echo 'Nom : '.$_POST["nom"].'<br>';
-            echo 'Prénom : ' .$_POST["prenom"].'<br>';
-            echo 'Société : ' .$_POST["society"].'<br>';
-            echo 'E-mail : ' .$_POST["mail"].'<br>';
-            echo 'Téléphone : ' .$_POST["phone"].'<br>';
+$objet = "Nouveau QCM de $prenom $nom";
 
+$retour = mail('contact@marionhouze.com', $message, $objet);
 
+echo 'Nom : '.$_POST["nom"].'<br>';
+echo 'Prénom : ' .$_POST["prenom"].'<br>';
+echo 'Société : ' .$_POST["society"].'<br>';
+echo 'E-mail : ' .$_POST["mail"].'<br>';
+echo 'Téléphone : ' .$_POST["phone"].'<br>';
 
 if (isset($_POST['question1']))
  {
@@ -62,7 +91,5 @@ if (isset($_POST['question3']))
     echo 'Faux';
    }}
 
- header("Location:thankyou.php");
-
-   ?>
-
+// Faire un if en fonction de $note pour afficher la bonne page
+//header("Location:thankyou.php?note=$note");

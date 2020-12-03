@@ -1,3 +1,7 @@
+<?php
+require_once "questions.php";
+$questions = getQuestions();
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -43,11 +47,11 @@
 
      <div class="info">
         <div class="info-candidate container">               
-                <input class="form-element1" type="text" id="nom" name="nom" value="<?php if (isset($_POST['nom'])) echo htmlspecialchars($_POST['nom']);?>" placeholder="Nom" required="Veuillez remplir ce champs">
-                <input class="form-element1" type="text" id="prenom" name="prenom" value="<?php if (isset($_POST['prenom'])) echo htmlspecialchars($_POST['prenom']);?>" placeholder="Prénom" required="Veuillez remplir ce champs">
-                <input class="form-element1" type="text" id="society" name="society" value="<?php if (isset($_POST['society'])) echo htmlspecialchars($_POST['society']);?>" placeholder="Société">
-                <input class="form-element1" type="tel" id="phone" name="phone" value="<?php if (isset($_POST['phone'])) echo htmlspecialchars($_POST['phone']);?>" placeholder="Téléphone" required="Veuillez remplir ce champs">
-                <input class="form-element" type="email" id="mail" name="mail" value="<?php if (isset($_POST['mail'])) echo htmlspecialchars($_POST['mail']);?>"placeholder="E-Mail" required="Veuillez remplir ce champs">
+                <input class="form-element1" type="text" id="nom" name="nom" placeholder="Nom" required="Veuillez remplir ce champs">
+                <input class="form-element1" type="text" id="prenom" name="prenom" placeholder="Prénom" required="Veuillez remplir ce champs">
+                <input class="form-element1" type="text" id="society" name="society" placeholder="Société">
+                <input class="form-element1" type="tel" id="phone" name="phone" placeholder="Téléphone" required="Veuillez remplir ce champs">
+                <input class="form-element" type="email" id="mail" name="mail" placeholder="E-Mail" required="Veuillez remplir ce champs">
                 </div>
 
                <!--  <input class="btn-primmary" type="submit" value="Start now">
@@ -62,6 +66,37 @@
      
 
     <section class="QCM container">
+
+        <?php foreach ($questions as $index => $question) : ?>
+            <div class="odd">
+
+                <div class="img-wrapper-odd">
+                    <div class="img-odd"><img src="./image/img-1.jpg" alt="" class="img-front-right"></div>
+                    <div class="img-odd"><img src="./image/img_texture@1x.jpg" alt="" class="img-back-right"></div>
+                </div>
+
+                <div class="odd-questions">
+                    <p>
+
+                        <?php if (isset($question["bonus"]) && $question["bonus"] === true) : ?>
+                            bonus
+                        <?php else: ?>
+                            <?= $index + 1; ?>
+                        <?php endif; ?>
+                        
+                        <?= $question["titre"]; ?><br />
+                        <?php foreach ($question["reponses"] as $reponse) : ?>
+                            <label>
+                                <input type="<?= $question["type"]; ?>" name="reponses-<?= $index + 1; ?>[]" value="<?= $reponse["value"]; ?>" />
+                                <?= $reponse["label"]; ?>
+                            </label>
+                            <br />
+                        <?php endforeach; ?>
+                    </p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+
     <div class="odd">
 
                 <div class="img-wrapper-odd">

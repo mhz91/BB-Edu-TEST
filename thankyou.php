@@ -1,3 +1,8 @@
+<?php 
+// Récupérer la note de l'utilisateur
+// $note = $_GET["note"]
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
