@@ -1,0 +1,447 @@
+/* small, medium, large, up / down */
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;400;600;700&display=swap");
+/* small, medium, large, up / down */
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;400;600;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  color: black;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+h2, h1 {
+  font-family: "Oswald", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-primmary {
+  border: none;
+  background-color: #15a152;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  transition: background 0.3s;
+  display: block;
+  margin: auto;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+a #icon-nav, #icon-footer {
+  color: #fff;
+}
+a #icon-nav:hover, #icon-footer:hover {
+  color: #15a152;
+}
+
+/* small, medium, large, up / down */
+/* small, medium, large, up / down */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  color: black;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+h2, h1 {
+  font-family: "Oswald", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-primmary {
+  border: none;
+  background-color: #15a152;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  transition: background 0.3s;
+  display: block;
+  margin: auto;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+a #icon-nav, #icon-footer {
+  color: #fff;
+}
+a #icon-nav:hover, #icon-footer:hover {
+  color: #15a152;
+}
+
+.footer-inner {
+  background-color: #292929;
+  padding: 2%;
+}
+
+.img-footer {
+  width: 10%;
+  height: auto;
+}
+@media screen and (max-width: 768px) {
+  .img-footer {
+    width: 15%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .img-footer {
+    width: 25%;
+  }
+}
+
+.footer-rgpd {
+  padding-top: 10px;
+}
+
+.footer-rgpd, .social-nav {
+  flex-basis: 50%;
+}
+
+.footer-row2 {
+  border-top: #fff solid 1px;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .footer-row2 {
+    display: flex;
+  }
+}
+
+.menu-legal-menu {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-rgpd ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+  .footer-rgpd ul {
+    font-size: 13px;
+    justify-content: flex-start;
+  }
+}
+
+.social-nav ul {
+  display: flex;
+}
+@media screen and (max-width: 425px) {
+  .social-nav ul {
+    display: flex;
+  }
+}
+@media screen and (max-width: 768px) {
+  .social-nav ul {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .social-nav ul {
+    padding-top: 20px;
+  }
+}
+
+.social-nav ul li {
+  margin: 15px;
+}
+@media screen and (max-width: 768px) {
+  .social-nav ul li {
+    margin: 15px 10px;
+  }
+}
+
+/* small, medium, large, up / down */
+/* small, medium, large, up / down */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  color: black;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+h2, h1 {
+  font-family: "Oswald", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-primmary {
+  border: none;
+  background-color: #15a152;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  transition: background 0.3s;
+  display: block;
+  margin: auto;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+a #icon-nav, #icon-footer {
+  color: #fff;
+}
+a #icon-nav:hover, #icon-footer:hover {
+  color: #15a152;
+}
+
+.top {
+  background: url("./image/BrooklynBrewery-header.jpg") center bottom;
+  background-size: cover;
+  min-height: 50vh;
+  padding: 2% 0;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first-title {
+  font-size: 110px !important;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 0px;
+}
+@media all and (min-width: 426px) and (max-width: 991px) {
+  .first-title {
+    font-size: 90px !important;
+  }
+}
+@media screen and (max-width: 425px) {
+  .first-title {
+    font-size: 60px !important;
+  }
+}
+
+.second-title {
+  font-size: 70px;
+  margin-top: 0px;
+}
+@media all and (min-width: 426px) and (max-width: 991px) {
+  .second-title {
+    font-size: 48px !important;
+  }
+}
+@media screen and (max-width: 425px) {
+  .second-title {
+    font-size: 38px !important;
+  }
+}
+
+.header-inner {
+  font-size: 70px;
+  color: #fff;
+}
+
+/* small, medium, large, up / down */
+/* small, medium, large, up / down */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  color: black;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+h2, h1 {
+  font-family: "Oswald", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-primmary {
+  border: none;
+  background-color: #15a152;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  transition: background 0.3s;
+  display: block;
+  margin: auto;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+a #icon-nav, #icon-footer {
+  color: #fff;
+}
+a #icon-nav:hover, #icon-footer:hover {
+  color: #15a152;
+}
+
+main {
+  padding: 4% 0;
+}
+
+.odd {
+  display: flex;
+}
+
+.even {
+  display: flex;
+}
+
+.info {
+  margin: auto 10%;
+}
+@media screen and (max-width: 564px) {
+  .info {
+    margin: auto 0;
+  }
+}
+
+.info-candidate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-element1 {
+  flex-basis: 47%;
+}
+@media screen and (max-width: 673px) {
+  .form-element1 {
+    flex-basis: 100%;
+  }
+}
+
+.form-element {
+  width: 100%;
+}
+
+.form-element1, .form-element {
+  margin-bottom: 15px;
+  background: #fff;
+  border: 2px solid #15a152;
+  color: black;
+  height: 40px;
+  padding-left: 40px;
+  padding-right: 80px;
+  font-family: "Jost", sans-serif;
+  font-size: 20px;
+  padding: 25px 5px;
+}
+
+.odd-questions, .even-questions {
+  margin: 15px 0;
+}
+
+.img-wrapper-odd {
+  display: flex;
+}
+
+.img-wrapper-even {
+  display: flex;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: 0 0 5px 0px gray inset;
+}
+
+input[type=radio]:before {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: 20% auto;
+  border-radius: 50%;
+}
+
+input[type=radio]:checked:before {
+  background: #15a152;
+}
+
+/*# sourceMappingURL=styles.css.map */

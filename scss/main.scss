@@ -1,0 +1,87 @@
+@import "libs/reset.scss";
+@import "libs/responsive.scss";
+@import "libs/_base";
+@import "libs/_typographie";
+
+main {
+    padding: 4% 0;
+  }
+
+.odd {
+  display: flex;
+}
+
+.even {
+  display: flex;
+}
+
+.info {
+  margin: auto 10%;
+  @media screen and (max-width: 564px) {
+    margin: auto 0;
+  }}
+
+  .info-candidate {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form-element1 { 
+    flex-basis: 47%;
+
+    @media screen and (max-width: 673px) {
+      flex-basis: 100%;
+    }
+}
+
+  .form-element {
+    width: 100%;
+  }
+
+  .form-element1, .form-element {
+    margin-bottom: 15px;
+    background: $thirdly;
+    border: 2px solid $secondary;
+    color: $primary;
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 80px;
+    font-family: $font-body;
+    font-size: 20px;
+    padding: 25px 5px;
+}
+
+.odd-questions, .even-questions {
+  margin: 15px 0;
+}
+
+.img-wrapper-odd {
+  display: flex;
+}
+
+.img-wrapper-even {
+  display: flex;
+}
+
+input[type='radio'] {
+  -webkit-appearance:none;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  outline:none;
+  box-shadow:0 0 5px 0px gray inset;
+}
+
+input[type='radio']:before {
+  content:'';
+  display:block;
+  width:60%;
+  height:60%;
+  margin: 20% auto;    
+  border-radius:50%;    
+}
+input[type='radio']:checked:before {
+  background: $secondary;
+}
