@@ -1,0 +1,83 @@
+@import "libs/reset.scss";
+@import "libs/responsive.scss";
+@import "libs/_base";
+@import "libs/_typographie";
+
+.footer-inner {
+    background-color: $fifthly;
+    padding: 2%;
+}
+
+.img-footer {
+    width: 10%;
+    height: auto;
+
+    @media screen and (max-width: $bp-medium){ 
+        width: 15%;
+     }
+     @media screen and (max-width: $bp-small){ 
+        width: 25%;
+     }
+}
+
+.footer-rgpd {
+    padding-top: 10px;
+}
+
+.footer-rgpd, .social-nav {
+    flex-basis: 50%;
+}
+.footer-row2 {
+    border-top: #fff solid 1px;
+    justify-content: space-between;
+    
+    @media screen and (min-width: $bp-medium){ 
+        display: flex;
+     }
+}
+
+.menu-legal-menu {
+    color: $fourthly;
+}
+.footer-rgpd ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14px;
+
+    @media screen and (max-width: $bp-medium){ 
+        font-size: 13px;
+        justify-content: flex-start;
+     }
+}
+
+.social-nav ul {
+    display: flex;
+
+    @media screen and (max-width: $bp-small){ 
+        display: flex;
+     }
+     @media screen and (max-width: $bp-medium){ 
+        justify-content: flex-start;
+     }
+}
+
+.social-nav ul {
+    @media screen and (max-width: $bp-medium){ 
+        padding-top: 20px;
+     }}
+
+
+.social-nav ul li {
+    margin: 15px;
+
+    @media screen and (max-width: $bp-medium){ 
+        margin: 15px 10px;
+}}
+
+
+//.menu-legal ul li {
+//    margin: 10px;
+//}
+
