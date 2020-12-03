@@ -1,11 +1,21 @@
 <?php
+
     $retour = mail('contact@marionhouze.com', 'Test envoie qcm', $_POST['nom']);
+
+
+    $nom = $_POST['nom']; // required
+    $prenom = $_POST['prenom']; // required
+    $email = $_POST['society']; // required
+    $telephone = $_POST['mail']; // not required
+    $commentaire = $_POST['phone']; // required
 
             echo 'Nom : '.$_POST["nom"].'<br>';
             echo 'Prénom : ' .$_POST["prenom"].'<br>';
             echo 'Société : ' .$_POST["society"].'<br>';
             echo 'E-mail : ' .$_POST["mail"].'<br>';
             echo 'Téléphone : ' .$_POST["phone"].'<br>';
+
+
 
 if (isset($_POST['question1']))
  {
