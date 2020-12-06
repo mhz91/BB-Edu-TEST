@@ -1,6 +1,11 @@
+
 <?php 
-// Récupérer la note de l'utilisateur
-// $note = $_GET["note"]
+    require_once "questions.php";
+    $questions = getQuestions();
+    // Récupérer la note de l'utilisateur
+    $id = $_GET["note"]; 
+    $note = $_GET["note"]
+
 
 ?>
 <!DOCTYPE html>
@@ -34,11 +39,18 @@
                         <a href="#" class="links"><i class="fas fa-envelope fa-2x" id="icon-nav"></i></a>
                 </nav>
             </div>
-    </header>
 
-       <h1>CONGRATS ! <br>
-<br>VOUS AVEZ OBTENU XX RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS !
-<br>VOUS ÊTES LE/LA MEILLEUR(E) !</h1>
+
+ <h1 class="results-title"><?php if ($note <= 8) {
+  echo 'LOSER ! VOUS AVEZ OBTENU ' . $note . ' RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS ! RETOURNEZ D’URGENCE RÉVISER VOS CLASSIQUES ! ';
+}
+?>
+</h1>
+</header>
+
+<div class="content-results">
+<h2>MERCI D’AVOIR PARTICIPÉ !</h2>
+</div>
 
 <?php include("footer.php"); ?>
         </body>

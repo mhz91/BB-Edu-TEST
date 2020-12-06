@@ -4,3 +4,43 @@
 @import "libs/_base";
 @import "libs/_typographie";
 
+
+
+.page-content {
+  background: url("./image/looser.jpg") center top;
+  background-size: cover;
+}
+
+.results-title {
+  font-size: 90px;
+  color: $thirdly;
+  line-height: 1.3;
+  margin-bottom: 0px;
+
+  @media all and (min-width: 426px) and (max-width: 991px) { 
+    font-size: $h1-medium-size!important;
+  }
+  @media screen and (max-width: $bp-small) {
+    font-size: $h1-small-size!important;
+}}
+
+.results-secondtitle {
+  font-size: 70px;
+  color: $thirdly;
+  line-height: 1.3;
+  margin-bottom: 0px;
+
+  @media all and (min-width: 426px) and (max-width: 991px) { 
+    font-size: $h1-medium-size!important;
+  }
+  @media screen and (max-width: $bp-small) {
+    font-size: $h1-small-size!important;
+}}
+
+.results-thirdtitle {
+  text-align: right;
+  font-size: 70px;
+  color: $thirdly;
+  line-height: 1.3;
+  margin-bottom: 0px;
+}

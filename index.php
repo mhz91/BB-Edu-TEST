@@ -32,7 +32,6 @@ $questions = getQuestions();
                 <nav>
                         <a href="https://brooklynbrewery.com/" class="links" target="_blank"><i
                                 class="fas fa-home fa-2x" id="icon-nav"></i></a>
-                        <a href="#" class="links"><i class="fas fa-envelope fa-2x" id="icon-nav"></i></a>
                 </nav>
             </div>
 
@@ -69,17 +68,11 @@ $questions = getQuestions();
 
         <?php foreach ($questions as $index => $question) : ?>
             <div class="odd">
-
-                <div class="img-wrapper-odd">
-                    <div class="img-odd"><img src="./image/img-1.jpg" alt="" class="img-front-right"></div>
-                    <div class="img-odd"><img src="./image/img_texture@1x.jpg" alt="" class="img-back-right"></div>
-                </div>
-
-                <div class="odd-questions">
+                <div class="questions">
                     <p>
 
                         <?php if (isset($question["bonus"]) && $question["bonus"] === true) : ?>
-                            bonus
+                            Bonus
                         <?php else: ?>
                             <?= $index + 1; ?>
                         <?php endif; ?>
@@ -94,68 +87,16 @@ $questions = getQuestions();
                         <?php endforeach; ?>
                     </p>
                 </div>
+
+                    <div class="img">
+                        <?php foreach ($question as $image): ?>
+                                <img src="./image/<?= $image["images"]; ?>" alt="">
+                        <?php endforeach; ?>
+                    </div>
+            
             </div>
         <?php endforeach; ?>
-
-    <div class="odd">
-
-                <div class="img-wrapper-odd">
-                    <div class="img-odd"><img src="./image/img-1.jpg" alt="" class="img-front-right"></div>
-                    <div class="img-odd"><img src="./image/img_texture@1x.jpg" alt="" class="img-back-right"></div>
-                </div>
-
-                <div class="odd-questions">
-                    <p>
-                       1 Quel est le classement de Brooklyn parmi les brasseries américaines ? (volume)*<br />
-                        <label><input type="radio" name="question1" value="#1" /> #1</label><br />
-                        <label><input type="radio" name="question1" value="#2" /> #2</label><br />
-                        <label><input type="radio" name="question1" value="#12" /> #12</label><br />
-                        <label><input type="radio" name="question1" value="#50" /> #50</label>
-                    </p>
-                </div>
-    </div>
-   
-    <div class="even">
-                <div class="even-questions">
-                    <p>
-                       2 Combien de brasseries y avait-il à Brooklyn avant la Prohibition ?<br />
-                        <label><input type="radio" name="question2" value="0" /> 0</label><br />
-                        <label><input type="radio" name="question2" value="48" /> 48</label><br />
-                        <label><input type="radio" name="question2" value="356" /> 356</label><br />
-                        <label><input type="radio" name="question2" value="128" /> 128</label>
-                    </p>
-                </div>
-
-                <div class="img-wrapper-even">
-                        <div class="img-even"><img src="./image/img-1.jpg" alt="" class="img-front-right"></div>
-                        <div class="img-even"><img src="./image/img_texture@1x.jpg" alt="" class="img-back-right"></div>
-                </div>
-    </div>
-    
-        <div class="odd">
-                <div class="img-wrapper-odd">
-                        <div class="img-odd"><img src="" alt="" class="img-front-right"></div>
-                        <div class="img-odd"><img src="" alt="" class="img-back-right"></div>
-                </div>
-        </div>
-        <div class="odd">
-
-                    <div class="img-wrapper-odd">
-                        <div class="img-odd"><img src="./image/img-1.jpg" alt="" class="img-front-right"></div>
-                        <div class="img-odd"><img src="./image/img_texture@1x.jpg" alt="" class="img-back-right"></div>
-                    </div>
-
-                    <div class="odd-questions">
-                        <p>3 Quel était le premier métier de Steve Hindy, fondateur de The Brooklyn Brewery?<br />
-                        <label><input type="radio" name="question3" value="Vendeur de tapis" /> Vendeur de tapis</label><br />
-                        <label><input type="radio" name="question3" value="Banquier" /> Banquier</label><br />
-                        <label><input type="radio" name="question3" value="Journaliste" /> Journaliste</label><br />
-                        <label><input type="radio" name="question3" value="Distributeur" /> Distributeur</label>
-                        </p>
-                    </div>
-        </div>
-
-                
+               
             <section class="QCM container">
                 <div class="btn-validate">
                     <input class="btn-primmary" type="submit" value="Valider vos réponses">
