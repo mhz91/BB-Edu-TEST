@@ -67,41 +67,31 @@ $questions = getQuestions();
         <?php foreach ($questions as $index => $question) : ?>
             
                     <div class="content-section">
-                         <div class="questions">
-                        <p>
-
-                        <?php if (isset($question["bonus"]) && $question["bonus"] === true) : ?>
-                            Bonus
-                        <?php else: ?>
-                            <?= $index + 1; ?>
-                        <?php endif; ?>
-                        
-                        <?= $question["titre"]; ?><br />
-                        <?php foreach ($question["reponses"] as $reponse) : ?>
-                            <label class="form-element2">
-                                <input type="<?= $question["type"]; ?>" name="reponses-<?= $index + 1; ?>[]" value="<?= $reponse["value"]; ?>" />
-                                <?= $reponse["label"]; ?>
-                            </label>
-                            <br />
-                        <?php endforeach; ?>
-                        </p>
+                        <div class="questions type-<?= $question["type"]; ?>">
+                            <p>
+                                <?php if (isset($question["bonus"]) && $question["bonus"] === true) : ?>
+                                    Bonus
+                                <?php else: ?>
+                                    <?= $index + 1; ?>
+                                <?php endif; ?>
+                                
+                                <?= $question["titre"]; ?><br />
+                                <?php foreach ($question["reponses"] as $reponse) : ?>
+                                    <label class="form-element2">
+                                        <input type="<?= $question["type"]; ?>" name="reponses-<?= $index + 1; ?>[]" value="<?= $reponse["value"]; ?>" required />
+                                        <?= $reponse["label"]; ?>
+                                    </label>
+                                    <br />
+                                <?php endforeach; ?>
+                            </p>
                         </div>
 
                         <div class="img">
                             <div class="img-front">
-                            <?php
-                            // répertoire images
-                            $image_path = './image';
-                            // n° des images à afficher dans un tableau
-                            $arr = array(1);
-                            // boucle
-                            foreach ($arr as $value) {
-                                // affichage de l'image selon les valeurs du tableau
-                                echo '<img src="'.$image_path.'/'.$value.'.jpg"> '; } 
-                            ?>
+                                <img src="<?= $question["image"]; ?>">
                             </div>
                             <div class="img-back">
-                            <img src="./image/brooklyn-2.jpg">
+                                <img src="./image/brooklyn-2.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -127,6 +117,21 @@ $questions = getQuestions();
     
 
     <?php include("footer.php"); ?>
+
+    <script>
+        let checkboxContainers = document.querySelectorAll('.type-checkbox');
+
+        for (const container of checkboxContainers) {
+            const checkboxes = container.querySelectorAll('input[type=checkbox]');
+            for (const checkbox of checkboxes) {
+                checkbox.addEventListener('click', function() {
+                    document.querySelectorAll('input[name="' + this.name + '"]').forEach(function(el) {
+                        el.required = false;
+                    });
+                });
+            }
+        }
+    </script>
+
 </body>
 </html>
-

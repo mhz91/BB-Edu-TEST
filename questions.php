@@ -15,7 +15,7 @@ function getQuestions() {
                 [ "label" => "#50", "value" => "#4" ],
             ],
             "correctes" => ["#3"],
-            "images" => [ "./image/001.jpg", "./image/002.jpg"]
+            "image" => "./image/1.jpg"
         ],
         [
             //"bonus" => true,
@@ -29,7 +29,7 @@ function getQuestions() {
                 [ "label" => "128", "value" => "4" ],
             ],
             "correctes" => ["#2"],
-            "images" => ["./image/003.jpg", "./image/002.jpg"]
+            "image" => "./image/3.jpg"
         ],
         [
             "titre" => "Quel était le premier métier de Steve Hindy, fondateur de The
@@ -41,7 +41,7 @@ function getQuestions() {
                 [ "label" => "Distributeur", "value" => "#3" ],
             ],
             "correctes" => ["#2"],
-            "images" => ["./image/img-1.jpg", "./image/img_texture@1x.jpg"]
+            "image" => "./image/4.jpg"
         ],
         [
             "titre" => "Quelle année a été fondée la brasserie?",
