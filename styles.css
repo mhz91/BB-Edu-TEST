@@ -47,6 +47,13 @@ nav ul {
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-primmary:hover {
+  color: #15a152;
+  background-color: #fff;
+  border: 1px solid #15a152;
+  transition: all 0.5s ease-in-out;
 }
 
 a #icon-nav, #icon-footer {
@@ -102,6 +109,13 @@ nav ul {
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-primmary:hover {
+  color: #15a152;
+  background-color: #fff;
+  border: 1px solid #15a152;
+  transition: all 0.5s ease-in-out;
 }
 
 a #icon-nav, #icon-footer {
@@ -242,6 +256,13 @@ nav ul {
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-primmary:hover {
+  color: #15a152;
+  background-color: #fff;
+  border: 1px solid #15a152;
+  transition: all 0.5s ease-in-out;
 }
 
 a #icon-nav, #icon-footer {
@@ -270,6 +291,7 @@ a #icon-nav:hover, #icon-footer:hover {
   color: #fff;
   line-height: 1.3;
   margin-bottom: 0px !important;
+  margin-top: 0px !important;
 }
 @media all and (min-width: 426px) and (max-width: 991px) {
   .first-title {
@@ -284,7 +306,8 @@ a #icon-nav:hover, #icon-footer:hover {
 
 .second-title {
   font-size: 70px;
-  margin-top: 0px;
+  margin-bottom: 20px !important;
+  margin-top: 0px !important;
 }
 @media all and (min-width: 426px) and (max-width: 991px) {
   .second-title {
@@ -348,6 +371,13 @@ nav ul {
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-primmary:hover {
+  color: #15a152;
+  background-color: #fff;
+  border: 1px solid #15a152;
+  transition: all 0.5s ease-in-out;
 }
 
 a #icon-nav, #icon-footer {
@@ -361,12 +391,47 @@ main {
   padding: 4% 0;
 }
 
-.odd {
+.content-section {
   display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
 }
 
-.even {
+.content-section:nth-child(even) {
+  flex-direction: row-reverse !important;
+}
+.content-section:nth-child(even) .img {
+  flex-direction: row-reverse !important;
+}
+.content-section:nth-child(even) .img-front {
+  position: relative;
+  top: 20px;
+  left: -80px;
+}
+
+.content-section:nth-child(odd) .img-front {
+  position: relative;
+  top: 20px;
+  left: 100px;
+}
+
+.questions {
+  width: 100%;
+}
+
+.questions p {
+  font-size: 22px;
+  line-height: 1.5em;
+}
+
+p::first-letter {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.img {
   display: flex;
+  width: 100%;
 }
 
 .info {
@@ -403,12 +468,12 @@ main {
   background: #fff;
   border: 2px solid #15a152;
   color: black;
-  height: 40px;
+  height: 60px;
   padding-left: 40px;
   padding-right: 80px;
   font-family: "Jost", sans-serif;
   font-size: 20px;
-  padding: 25px 5px;
+  padding: 0px 5px;
 }
 
 .odd-questions, .even-questions {
@@ -491,6 +556,13 @@ nav ul {
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-primmary:hover {
+  color: #15a152;
+  background-color: #fff;
+  border: 1px solid #15a152;
+  transition: all 0.5s ease-in-out;
 }
 
 a #icon-nav, #icon-footer {
@@ -503,6 +575,25 @@ a #icon-nav:hover, #icon-footer:hover {
 .page-content {
   background: url("./image/looser.jpg") center top;
   background-size: cover;
+}
+
+.page-content2 {
+  background: url("./image/average.jpg") center top;
+  background-size: cover;
+}
+
+.page-content3 {
+  background: url("./image/congrats.jpg") center;
+  background-size: cover;
+}
+
+.page-content4 {
+  background: url("./image/yourtheman.jpg");
+  background-size: cover;
+}
+
+.content-title {
+  padding-bottom: 20%;
 }
 
 .results-title {

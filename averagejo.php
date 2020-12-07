@@ -23,7 +23,8 @@
 </head>
     <body>
 
-    <header class="top ">
+    <section class="page-content2">
+    <header class="top-content ">
 
         <div class="page-header container">
 
@@ -35,21 +36,21 @@
                 <nav>
                         <a href="https://brooklynbrewery.com/" class="links" target="_blank"><i
                                 class="fas fa-home fa-2x" id="icon-nav"></i></a>
-                        <a href="#" class="links"><i class="fas fa-envelope fa-2x" id="icon-nav"></i></a>
                 </nav>
-            </div>
+            </div>      
+    </header>
 
+    <div class="content-title container">
+                <?php if ($note >= 3 OR $note <= 4) {
+                echo '<H1 class="results-title">AVERAGE JO ! !</H1> <H2 class="results-secondtitle">VOUS AVEZ OBTENU <span style="color: #ca0505;"> ' . $note . ' </span> RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS !
+                VOUS ÊTES SUR LA BONNE VOIE !</H2> ';
+                }?>
+        </div>
 
-<h1 class="results-title"><?php if ($note <= 8) {
-  echo 'AVERAGE ' . $note . ' RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS ! RETOURNEZ D’URGENCE RÉVISER VOS CLASSIQUES ! ';
-}
-?>
-</h1>
-</header>
-
-<div class="content-results">
-<h2>MERCI D’AVOIR PARTICIPÉ !</h2>
-</div>
+    <div class="content-results container">
+                <h2 class="results-thirdtitle">MERCI D’AVOIR PARTICIPÉ !</h2>
+    </div>
+    </section>
 
 <?php include("footer.php"); ?>
         </body>

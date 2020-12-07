@@ -45,6 +45,14 @@ nav ul{
   font-weight: 500;
   font-size: $btn-size;
   text-transform: uppercase;
+  cursor: pointer;
+  
+    &:hover {
+      color: $secondary;
+      background-color: $thirdly;
+      border: 1px solid $secondary;
+      transition: all .5s ease-in-out;
+    }
 }
 
 a #icon-nav, #icon-footer {

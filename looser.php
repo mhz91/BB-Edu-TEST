@@ -40,8 +40,8 @@
     </header>
 
     <div class="content-title container">
-                <?php if ($note <= 8) {
-                echo '<H1 class="results-title">LOSER !</H1> <H2 class="results-secondtitle">VOUS AVEZ OBTENU ' . $note . ' RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS ! RETOURNEZ D’URGENCE RÉVISER VOS CLASSIQUES !</H2> ';
+                <?php if ($note <= 2) {
+                echo '<H1 class="results-title">LOSER !</H1> <H2 class="results-secondtitle">VOUS AVEZ OBTENU <span style="color: #ca0505;"> ' . $note . ' </span> RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS ! RETOURNEZ D’URGENCE RÉVISER VOS CLASSIQUES !</H2> ';
                 }?>
         </div>
 

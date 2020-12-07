@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
     <body>
-<section class="page-content">
-    <header class="top-content ">
+    <section class="page-content3">
+        <header class="top-content ">
 
         <div class="page-header container">
 
@@ -37,18 +37,18 @@
                                 class="fas fa-home fa-2x" id="icon-nav"></i></a>
                 </nav>
             </div>      
-    </header>
+        </header>
 
-    <div class="content-title container">
-                <h1 class="results-title"><?php if ($note <= 8) {
-                echo '<H1 class="results-title">CONGRATS !</H1> <H2 class="results-secondtitle">VOUS AVEZ OBTENU ' . $note . ' RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS ! VOUS ÊTES LE/LA MEILLEUR(E) ! </H2>';
-            }?>
-                </h1>
+        <div class="content-title container">
+                    <?php if ($note >= 5 OR $note <= 6 ) {
+                        echo '<H1 class="results-title">CONGRATS !</H1> <H2 class="results-secondtitle">VOUS AVEZ OBTENU <span style="color: #15a152;"> ' . $note . ' </span> RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS ! VOUS ÊTES LE/LA MEILLEUR(E) ! </H2>';
+                    }?>
         </div>
 
         <div class="content-results container">
                 <h2 class="results-thirdtitle">MERCI D’AVOIR PARTICIPÉ !</h2>
     </div>
+    </section>
 
 <?php include("footer.php"); ?>
         </body>

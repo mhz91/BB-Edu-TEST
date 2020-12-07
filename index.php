@@ -42,21 +42,19 @@ $questions = getQuestions();
             </div>      
         </div>
 
-        <form action="traitement.php" method="post">
+        <form name="Submit" action="traitement.php" method="post">
 
      <div class="info">
         <div class="info-candidate container">               
                 <input class="form-element1" type="text" id="nom" name="nom" placeholder="Nom" required="Veuillez remplir ce champs">
                 <input class="form-element1" type="text" id="prenom" name="prenom" placeholder="Prénom" required="Veuillez remplir ce champs">
-                <input class="form-element1" type="text" id="society" name="society" placeholder="Société">
+                <select class="form-element1" name="society" id="society"><optgroup label="Société" selected>
+                <option value="Kronenbourg SAS">Kronenbourg SAS</option>
+                <option value="House of Beer">House of Beer</option>
+                <option value="Autre">Autre</option></optgroup></select>
                 <input class="form-element1" type="tel" id="phone" name="phone" placeholder="Téléphone" required="Veuillez remplir ce champs">
                 <input class="form-element" type="email" id="mail" name="mail" placeholder="E-Mail" required="Veuillez remplir ce champs">
                 </div>
-
-               <!--  <input class="btn-primmary" type="submit" value="Start now">
-               <a href="#"><button class="btn-primmary">Start now</button></a>
-
-                <button class="btn-primmary">Start now</button>-->
     </div>
 
     </header>
@@ -65,11 +63,12 @@ $questions = getQuestions();
      
 
     <section class="QCM container">
-
+    <div class="content">
         <?php foreach ($questions as $index => $question) : ?>
-            <div class="odd">
-                <div class="questions">
-                    <p>
+            
+                    <div class="content-section">
+                         <div class="questions">
+                        <p>
 
                         <?php if (isset($question["bonus"]) && $question["bonus"] === true) : ?>
                             Bonus
@@ -79,24 +78,36 @@ $questions = getQuestions();
                         
                         <?= $question["titre"]; ?><br />
                         <?php foreach ($question["reponses"] as $reponse) : ?>
-                            <label>
+                            <label class="form-element2">
                                 <input type="<?= $question["type"]; ?>" name="reponses-<?= $index + 1; ?>[]" value="<?= $reponse["value"]; ?>" />
                                 <?= $reponse["label"]; ?>
                             </label>
                             <br />
                         <?php endforeach; ?>
-                    </p>
-                </div>
+                        </p>
+                        </div>
 
-                    <div class="img">
-                        <?php foreach ($question as $image): ?>
-                                <img src="./image/<?= $image["images"]; ?>" alt="">
-                        <?php endforeach; ?>
+                        <div class="img">
+                            <div class="img-front">
+                            <?php
+                            // répertoire images
+                            $image_path = './image';
+                            // n° des images à afficher dans un tableau
+                            $arr = array(1);
+                            // boucle
+                            foreach ($arr as $value) {
+                                // affichage de l'image selon les valeurs du tableau
+                                echo '<img src="'.$image_path.'/'.$value.'.jpg"> '; } 
+                            ?>
+                            </div>
+                            <div class="img-back">
+                            <img src="./image/brooklyn-2.jpg">
+                            </div>
+                        </div>
                     </div>
-            
-            </div>
+
         <?php endforeach; ?>
-               
+        </div>             
             <section class="QCM container">
                 <div class="btn-validate">
                     <input class="btn-primmary" type="submit" value="Valider vos réponses">

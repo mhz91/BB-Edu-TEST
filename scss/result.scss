@@ -11,6 +11,25 @@
   background-size: cover;
 }
 
+.page-content2 {
+  background: url("./image/average.jpg") center top;
+  background-size: cover;
+}
+
+.page-content3 {
+  background: url("./image/congrats.jpg") center;
+  background-size: cover;
+}
+
+.page-content4 {
+  background: url("./image/yourtheman.jpg");
+  background-size: cover;
+}
+
+.content-title {
+  padding-bottom: 20%;
+}
+
 .results-title {
   font-size: 90px;
   color: $thirdly;

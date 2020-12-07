@@ -7,12 +7,52 @@ main {
     padding: 4% 0;
   }
 
-.odd {
+.content-section {
   display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
 }
 
-.even {
+.content-section:nth-child(even) {
+  flex-direction: row-reverse!important;
+
+  .img {
+    flex-direction: row-reverse!important;
+  }
+
+  .img-front {
+    position: relative; 
+    top: 20px; 
+    left: -80px; 
+  }
+}
+
+.content-section:nth-child(odd) {
+  .img-front {
+    position: relative; 
+    top: 20px; 
+    left: 100px; 
+  }}
+
+.questions {
+  width: 100%;
+}
+
+.questions p {
+  font-size: 22px;
+  line-height: 1.5em;
+}
+
+
+
+p::first-letter {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.img {
   display: flex;
+  width: 100%;
 }
 
 .info {
@@ -45,12 +85,12 @@ main {
     background: $thirdly;
     border: 2px solid $secondary;
     color: $primary;
-    height: 40px;
+    height: 60px;
     padding-left: 40px;
     padding-right: 80px;
     font-family: $font-body;
     font-size: 20px;
-    padding: 25px 5px;
+    padding: 0px 5px;
 }
 
 .odd-questions, .even-questions {
