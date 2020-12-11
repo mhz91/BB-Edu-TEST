@@ -49,14 +49,24 @@ $questions = getQuestions();
                 <input class="form-element1" type="text" id="nom" name="nom" placeholder="Nom" required="Veuillez remplir ce champs">
                 <input class="form-element1" type="text" id="prenom" name="prenom" placeholder="Prénom" required="Veuillez remplir ce champs">
                 <select class="form-element1" name="society" id="society"><optgroup label="Société" selected>
+                <option value="Option">Sélectionner une société</option>
                 <option value="Kronenbourg SAS">Kronenbourg SAS</option>
                 <option value="House of Beer">House of Beer</option>
                 <option value="Autre">Autre</option></optgroup></select>
                 <input class="form-element1" type="tel" id="phone" name="phone" placeholder="Téléphone" required="Veuillez remplir ce champs">
                 <input class="form-element" type="email" id="mail" name="mail" placeholder="E-Mail" required="Veuillez remplir ce champs">
                 </div>
-    </div>
-
+                </div>
+                
+			<button class="scroll__more">
+				<span class="scroll__more--text">Scroll</span>
+				<span class="bar__wrapper">
+					<span class="bar__whitespace">
+						<span class="bar__white--line"></span>
+					</span>
+				</span>
+			</button>
+		</div>
     </header>
 
     <main>
@@ -65,7 +75,7 @@ $questions = getQuestions();
     <section class="QCM container">
     <div class="content">
         <?php foreach ($questions as $index => $question) : ?>
-            
+
                     <div class="content-section">
                         <div class="questions type-<?= $question["type"]; ?>">
                             <p>
@@ -74,6 +84,7 @@ $questions = getQuestions();
                                 <?php else: ?>
                                     <?= $index + 1; ?>
                                 <?php endif; ?>
+
                                 
                                 <?= $question["titre"]; ?><br />
                                 <?php foreach ($question["reponses"] as $reponse) : ?>
@@ -88,7 +99,7 @@ $questions = getQuestions();
 
                         <div class="img">
                             <div class="img-front">
-                                <img src="<?= $question["image"]; ?>">
+                                <img class="img-scale" src="<?= $question["image"]; ?>">
                             </div>
                             <div class="img-back">
                                 <img src="./image/brooklyn-2.jpg" alt="">
@@ -97,6 +108,7 @@ $questions = getQuestions();
                     </div>
 
         <?php endforeach; ?>
+        
         </div>             
             <section class="QCM container">
                 <div class="btn-validate">
@@ -108,9 +120,6 @@ $questions = getQuestions();
 </main>
 
     <section class="footer-top">
-       <!-- <div class="header-inner container">
-            <h2>Merci d'avoir participé !</h2>
-        </div> -->
     </section>
 
     </main>

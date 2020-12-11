@@ -49,3 +49,73 @@
     font-size: $h2-max-size;
     color: $thirdly;
   }
+
+  .scroll__more {
+    width: 50px;
+    height: 220px;
+    position: absolute;
+    right: 17px;
+    bottom: 0;
+    z-index: 4;
+    background: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+    @media screen and (max-width: 564px) {
+      display: none;
+    }
+  }
+
+  .scroll__more--text {
+    transform: rotate(
+-90deg
+) translateX(2rem);
+    -webkit-transform: rotate(
+-90deg
+) translateX(2rem);
+    -moz-transform: rotate(-90deg) translateX(2rem);
+    -ms-transform: rotate(-90deg) translateX(2rem);
+    -o-transform: rotate(-90deg) translateX(2rem);
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    color: #fff;
+    
+  }
+
+  .bar__wrapper {
+    width: 2px;
+    height: 80px;
+    position: absolute;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.bar__whitespace {
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bar__whitespace, .bar__white--line {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.bar__white--line {
+  background-color: #fff;
+  left: -1px;
+  top: 0;
+  animation: slide-down 2s steps(100) infinite;
+  -webkit-animation: slide-down 2s steps(100) infinite;
+}
+
+.bar__whitespace, .bar__white--line {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}

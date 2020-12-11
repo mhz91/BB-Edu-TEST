@@ -30,13 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
 //Set the hostname of the mail server
-//    $mail->Host = 'smtp.gmail.com';
+  $mail->Host = 'smtp.gmail.com';
 // use
- $mail->Host = gethostbyname('smtp.gmail.com');
+  $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
+  $mail->SMTPDebug = 2; 
+  $mail->SMTPSecure = 'ssl';
 
 //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-    $mail->Port = 587;
+    $mail->Port = 465;
 
 //Set the encryption mechanism to use - STARTTLS or SMTPS
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -110,8 +112,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mail->send();
 }
 
-// mail('contact@marionhouze.com', $contenu, $objet);
-
 /*
 echo 'Nom : '.$_POST["nom"].'<br>';
 echo 'Prénom : ' .$_POST["prenom"].'<br>';
@@ -122,12 +122,13 @@ echo $note;
 */
 
 die;
-if ($note <= 2) {
+
+if ($note <= 8) {
   header("Location:looser.php?note=$note");
-} elseif ($note >= 3 OR $note <= 4) {
+} elseif ($note >= 9 OR $note <= 15) {
   header("Location:averagejo.php?note=$note");
-} elseif ($note >= 5 OR $note <= 6) {
+} elseif ($note >= 16 OR $note <= 20) {
   header("Location:congrats.php?note=$note");
-} elseif ($note == 7) {
+} elseif ($note == 21) {
   header("Location:yourtheman.php?note=$note");
 }

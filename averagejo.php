@@ -41,14 +41,14 @@
     </header>
 
     <div class="content-title container">
-                <?php if ($note >= 3 OR $note <= 4) {
-                echo '<H1 class="results-title">AVERAGE JO ! !</H1> <H2 class="results-secondtitle">VOUS AVEZ OBTENU <span style="color: #ca0505;"> ' . $note . ' </span> RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS !
+                <?php if ($note >= 9 OR $note <= 15) {
+                echo '<H1 class="first-title">AVERAGE JO ! !</H1> <H2 class="second-title">VOUS AVEZ OBTENU <span style="color: #fb4a0d;"> ' . $note . ' </span> RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS !
                 VOUS ÊTES SUR LA BONNE VOIE !</H2> ';
                 }?>
         </div>
 
     <div class="content-results container">
-                <h2 class="results-thirdtitle">MERCI D’AVOIR PARTICIPÉ !</h2>
+                <h2 class="third-title">MERCI D’AVOIR PARTICIPÉ !</h2>
     </div>
     </section>
 

@@ -40,13 +40,13 @@
     </header>
 
     <div class="content-title container">
-                <?php if ($note <= 2) {
-                echo '<H1 class="results-title">LOSER !</H1> <H2 class="results-secondtitle">VOUS AVEZ OBTENU <span style="color: #ca0505;"> ' . $note . ' </span> RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS ! RETOURNEZ D’URGENCE RÉVISER VOS CLASSIQUES !</H2> ';
+                <?php if ($note <= 8) {
+                echo '<H1 class="first-title">LOSER !</H1> <H2 class="second-title">VOUS AVEZ OBTENU <span style="color: #ca0505;"> ' . $note . ' </span> RÉPONSES EXACTES SUR UN TOTAL DE 21 QUESTIONS ! RETOURNEZ D’URGENCE RÉVISER VOS CLASSIQUES !</H2> ';
                 }?>
         </div>
 
     <div class="content-results container">
-                <h2 class="results-thirdtitle">MERCI D’AVOIR PARTICIPÉ !</h2>
+                <h2 class="third-title">MERCI D’AVOIR PARTICIPÉ !</h2>
     </div>
     </section>
 <?php include("footer.php"); ?>
