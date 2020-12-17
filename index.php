@@ -25,7 +25,7 @@ $questions = getQuestions();
         <div class="page-header container">
 
             <div class="logo-header">
-                <a href="index.html" title="Accueil"><img src="./image/brooklyn-logo-circle-black.svg" alt=""></a>
+                <a href="https://brooklynbrewery.com" title="Accueil" target="_blank"><img src="./image/brooklyn-logo-circle-black.svg" alt="#"></a>
             </div>
 
             <div class="topnav" >
@@ -57,7 +57,7 @@ $questions = getQuestions();
                 <input class="form-element" type="email" id="mail" name="mail" placeholder="E-Mail" required="Veuillez remplir ce champs">
                 </div>
                 </div>
-                
+
 			<button class="scroll__more">
 				<span class="scroll__more--text">Scroll</span>
 				<span class="bar__wrapper">

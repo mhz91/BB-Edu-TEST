@@ -594,6 +594,12 @@ input[type=radio]:checked:before {
   background: #15a152;
 }
 
+.btn-primmary {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 /* small, medium, large, up / down */
 /* small, medium, large, up / down */
 * {

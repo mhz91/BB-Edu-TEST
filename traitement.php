@@ -7,38 +7,29 @@ use PHPMailer\PHPMailer\Exception;
 use Symfony\Component\Dotenv\Dotenv;
 
 $dotenv = new Dotenv();
-$dotenv->load(__DIR__ . '/.env');
+$dotenv->loadEnv(__DIR__ . '/.env');
 
 require_once "questions.php";
 $questions = getQuestions();
-
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-//die;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mail = new PHPMailer(true);
 
     //Tell PHPMailer to use SMTP
     $mail->isSMTP();
-
+    $mail->CharSet = 'UTF-8';
+    $mail->Encoding = 'base64';
 //Enable SMTP debugging
 // SMTP::DEBUG_OFF = off (for production use)
 // SMTP::DEBUG_CLIENT = client messages
 // SMTP::DEBUG_SERVER = client and server messages
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;
 
 //Set the hostname of the mail server
   $mail->Host = 'smtp.gmail.com';
-// use
-  $mail->Host = gethostbyname('smtp.gmail.com');
-// if your network does not support SMTP over IPv6
-  $mail->SMTPDebug = 2; 
-  $mail->SMTPSecure = 'ssl';
 
 //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-    $mail->Port = 465;
+    $mail->Port = 587;
 
 //Set the encryption mechanism to use - STARTTLS or SMTPS
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -49,12 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //Username to use for SMTP authentication - use full email address for gmail
     $mail->Username = $_ENV["SMTP_USERNAME"];
 
+
 //Password to use for SMTP authentication
     $mail->Password = $_ENV["SMTP_PASSWORD"];
 
     $mail->setFrom('from@example.com', 'Mailer');
-    $mail->addAddress('contact@marionhouze.com');
     $mail->addAddress('houze.m@gmail.com');
+    $mail->addAddress('contact@marionhouze.com');
 
     $mail->Subject = 'REPONSES EDU TEST';
   
@@ -99,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
     $numQuestion++;
   }
-
+  $contenu .= '<h2>La note est de '.$note.' sur 21.</h2>';
   $contenu .= '</p>';
 
   $contenu .= '</body></html>'; // Contenu du message de l'email (en XHTML)
@@ -112,19 +104,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mail->send();
 }
 
-/*
-echo 'Nom : '.$_POST["nom"].'<br>';
-echo 'Prénom : ' .$_POST["prenom"].'<br>';
-echo 'Société : ' .$_POST["society"].'<br>';
-echo 'E-mail : ' .$_POST["mail"].'<br>';
-echo 'Téléphone : ' .$_POST["phone"].'<br>';
-echo $note;
-*/
-
-die;
-
+var_dump($note);
 if ($note <= 8) {
-  header("Location:looser.php?note=$note");
+  header("Location:loser.php?note=$note");
 } elseif ($note >= 9 OR $note <= 15) {
   header("Location:averagejo.php?note=$note");
 } elseif ($note >= 16 OR $note <= 20) {

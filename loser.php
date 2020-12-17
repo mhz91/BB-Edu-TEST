@@ -1,8 +1,6 @@
 <?php 
     require_once "questions.php";
     $questions = getQuestions();
-    // Récupérer la note de l'utilisateur
-    $id = $_GET["note"]; 
     $note = $_GET["note"]
 
 
@@ -28,7 +26,7 @@
         <div class="page-header container">
 
             <div class="logo-header">
-                <a href="index.html" title="Accueil"><img src="./image/brooklyn-logo-circle-black.svg" alt=""></a>
+            <a href="https://brooklynbrewery.com" title="Accueil" target="_blank"><img src="./image/brooklyn-logo-circle-black.svg" alt="#"></a>
             </div>
 
             <div class="topnav" >

@@ -178,7 +178,7 @@ function getQuestions() {
                 [ "label" => "Brooklyn Lager", "value" => "#1" ],
                 [ "label" => "Brooklyn East IPA", "value" => "#2" ],
                 [ "label" => "Black Chocolate Stout", "value" => "#3" ],
-                [ "label" => "Defender IPA", "value" => "#3" ],
+                [ "label" => "Defender IPA", "value" => "#4" ],
             ],
             "correctes" => ["#1"],
             "image" => "./image/img-15.jpg"
@@ -248,7 +248,7 @@ function getQuestions() {
         ],
         [
             "bonus" => true,
-            "titre" => "Comment allons-nous faire de Brooklyn une réussite cette année ?",
+            "titre" => "- Comment allons-nous faire de Brooklyn une réussite cette année ?",
             "type" => "radio",
             "reponses" => [
                 [ "label" => "En vendant des bouteilles de Special Effects à la librairie Bobo du quartier", "value" => "#1" ],
