@@ -81,11 +81,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     foreach ($reponses as $reponse) {
       foreach ($question["reponses"] as $questionReponse) {
         if ($questionReponse["value"] === $reponse) {
-          $contenu .= '<li>' . $questionReponse["label"] . '</li>';
+          $color = in_array($questionReponse["value"], $question["correctes"]) ? "green" : "red";
+          $contenu .= '<li style="color: ' . $color . ';">' . $questionReponse["label"] . '</li>';
         }
       }
     }
     $contenu .= '</ul>';
+
+    // Vérifier si l'internaute s'est trompé
+    if ($reponses != $question["correctes"]) {
+      $contenu .= "<p>Il fallait sélectionner :</p>";
+      $contenu .= '<ul>';
+      // Boucle sur les réponses qu'il aurait du sélectionner
+      foreach ($question["correctes"] as $correcte) {
+        // Rechercher dans le tableau des réponses la réponse complète à partir de la value
+        $index = array_search($correcte, array_column($question["reponses"], "value"));
+        $contenu .= '<li>' . $question["reponses"][$index]["label"] . '</li>';
+      }
+      $contenu .= '</ul>';
+    }
   
     $contenu .= '</p>';
   
